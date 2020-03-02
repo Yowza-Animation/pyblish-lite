@@ -166,7 +166,7 @@ class Controller(QtCore.QObject):
         plugins = pyblish.logic.plugins_by_targets(plugins, targets)
 
         for plugin in plugins:
-            if plugin.order < (pyblish.api.CollectorOrder + 0.5):
+            if plugin.order < (pyblish.api.CollectorOrder - 0.5):
                 collectors.append(plugin)
             elif plugin.order < (pyblish.api.ValidatorOrder + 0.5):
                 validators.append(plugin)
